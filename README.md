@@ -1,3 +1,5 @@
+<img src="docs/banner.svg" alt="WeaveCrawl Official Empirical Benchmarks" width="100%" />
+
 # WeaveCrawl Benchmarks ⚡
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
