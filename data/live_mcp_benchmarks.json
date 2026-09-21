@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "timestamp": "2026-09-21T13:29:04Z",
+    "db_path": "data/hands.sqlite3",
+    "zero_db_cold_start": true
+  },
+  "runs": [
+    {
+      "target": "Text Domain (example.com)",
+      "url": "https://example.com",
+      "goal": "Read and extract information from the article",
+      "latency_ms": 1115.5,
+      "best_tool": "read_url",
+      "confidence": 0.31,
+      "suggested_tools": [
+        "read_url",
+        "values",
+        "read",
+        "extract_cards"
+      ],
+      "pruned_count": 4,
+      "passed": true
+    },
+    {
+      "target": "Real ATS Form (Greenhouse Production Job Application)",
+      "url": "https://job-boards.eu.greenhouse.io/raisin/jobs/4784815101?gh_src=gm65u122teu",
+      "goal": "Upload candidate resume PDF document",
+      "latency_ms": 1196.6,
+      "best_tool": "upload_file",
+      "confidence": 0.92,
+      "suggested_tools": [
+        "upload_file",
+        "upload_via_click",
+        "read",
+        "read_url"
+      ],
+      "pruned_count": 2,
+      "passed": true
+    },
+    {
+      "target": "Real ATS Form (Greenhouse Production Job Application)",
+      "url": "https://job-boards.eu.greenhouse.io/raisin/jobs/4784815101?gh_src=gm65u122teu",
+      "goal": "Fill applicant first name, last name, and email into the application form",
+      "latency_ms": 1135.3,
+      "best_tool": "auto_fill",
+      "confidence": 0.97,
+      "suggested_tools": [
+        "auto_fill",
+        "fill_form",
+        "form",
+        "get_manifest"
+      ],
+      "pruned_count": 4,
+      "passed": true
+    },
+    {
+      "target": "Real ATS Form (Greenhouse Production Job Application)",
+      "url": "https://job-boards.eu.greenhouse.io/raisin/jobs/4784815101?gh_src=gm65u122teu",
+      "goal": "Detect if Cloudflare Turnstile captcha challenge is blocking application",
+      "latency_ms": 1216.5,
+      "best_tool": "detect_challenge",
+      "confidence": 1.0,
+      "suggested_tools": [
+        "detect_challenge",
+        "read_url",
+        "open_session",
+        "close_session"
+      ],
+      "pruned_count": 4,
+      "passed": true
+    }
+  ]
+}
