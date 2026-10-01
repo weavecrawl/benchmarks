@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python: 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Standard: BFCL v4 / AutoTool](https://img.shields.io/badge/Standard-BFCL_v4_|_AutoTool-purple.svg)](docs/methodology.md)
-[![Verification: 100% Empirical](https://img.shields.io/badge/Verification-100%25_Empirical-success.svg)](data/official_benchmarks.json)
+[![Results: Published](https://img.shields.io/badge/Results-Published-success.svg)](data/official_benchmarks.json)
 
 **Official Empirical Benchmarks for [WeaveCrawl](https://weavecrawl.com) — The Autonomous Browser Agent Engine with Structural Memory.**
 
@@ -28,7 +28,7 @@
 └─────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-[Methodology](docs/methodology.md) · [Competitor Matrix](docs/competitor_matrix.md) · [Certified Data](data/official_benchmarks.json) · [Reproduction Script](scripts/reproduce_benchmarks.py)
+[Methodology](docs/methodology.md) · [Competitor Matrix](docs/competitor_matrix.md) · [Published Data](data/official_benchmarks.json) · [Verification Script](scripts/reproduce_benchmarks.py)
 
 ---
 
@@ -40,7 +40,7 @@ Evaluated across 6 canonical agent tasks (Form Fill, Document Upload, Navigation
 | :---: | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
 | **10 tools** | **1. Naive Full (Baseline)** | 347 tok | 0.0% | 50.0% | N/A | 1,925.6 ms | Real tool-calling on `qwen2.5:3b` |
 | | **2. Tier 1 DOM Filter Only** | 292 tok | -15.9% | N/A | 100.0% | **0.011 ms** | Synchronous DOM state pruning |
-| | **3. Hybrid 2-Tier (Ours)** | **143 tok** | **-58.8%** | **100.0%** | **100.0%** | **829.6 ms** | Resident Kev-0.6B Pointer on CPU |
+| | **3. Hybrid 2-Tier (Ours)** | **143 tok** | **-58.8%** | **100.0%** | **100.0%** | **829.6 ms** | Small on-CPU router model |
 | **33 tools (Native)** | **1. Naive Full (Baseline)** | 1,089 tok | 0.0% | 50.0% | N/A | 1,433.8 ms | Full 33 schemas sent to outer LLM |
 | | **2. Tier 1 DOM Filter Only** | 911 tok | -16.3% | N/A | 100.0% | **0.023 ms** | Retains 100% of required tools |
 | | **3. Hybrid 2-Tier (Ours)** | **137 tok** | **-87.4%** | **100.0%** | **100.0%** | **1,049.9 ms** | Perfect Top-1 & Top-3 on standard CPU |
@@ -125,16 +125,16 @@ Measured on live production Greenhouse job application pages:
 
 ---
 
-## 🏃 Reproduce All Benchmarks Locally
+## 🏃 Check the Published Numbers Locally
 
-This repository includes a standalone offline reproduction runner that parses the certified evaluation data and verifies every metric without any network dependencies:
+This repository includes a standalone offline script that reads the published results in `data/` and prints them. It does not rerun the benchmarks; the original runs used the owner's private harness. No network needed:
 
 ```bash
 # Clone the benchmarks repository
 git clone https://github.com/weavecrawl/benchmarks.git
 cd benchmarks
 
-# Run reproduction runner
+# Print and check the published results
 python3 scripts/reproduce_benchmarks.py
 ```
 
@@ -142,5 +142,5 @@ python3 scripts/reproduce_benchmarks.py
 
 ## 📄 License
 
-The WeaveCrawl evaluation benchmarks and reproduction runner are released under the [MIT License](LICENSE).
+The WeaveCrawl evaluation benchmarks and verification script are released under the [MIT License](LICENSE).
 To integrate the core engine into your AI agent pipeline, visit [weavecrawl.com](https://weavecrawl.com).

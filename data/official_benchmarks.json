@@ -8,7 +8,7 @@
       "ram": "32 GB DDR4"
     },
     "models": {
-      "router": "Kev-0.6B Resident Pointer (CPU)",
+      "router": "Small on-CPU router model",
       "outer_llm": "Claude-3.5-Sonnet / GPT-4o / Qwen-3-4B"
     }
   },

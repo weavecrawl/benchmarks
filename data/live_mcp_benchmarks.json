@@ -1,7 +1,6 @@
 {
   "metadata": {
     "timestamp": "2026-09-21T13:29:04Z",
-    "db_path": "data/hands.sqlite3",
     "zero_db_cold_start": true
   },
   "runs": [

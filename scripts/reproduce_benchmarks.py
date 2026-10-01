@@ -1,7 +1,7 @@
 """
-reproduce_benchmarks.py — Offline Reproduction & Verification Suite for WeaveCrawl.
+reproduce_benchmarks.py — Offline Verification of the Published WeaveCrawl Benchmark Numbers.
 
-This script parses the certified empirical benchmark data and reproduces all
+This script reads the published benchmark data and prints all
 published evaluation tables, prompt token compression figures, and calibration curves.
 
 Zero external network calls required.
@@ -88,7 +88,7 @@ def main():
 
     meta = data.get("metadata", {})
     print("\n" + "#" * 80)
-    print("  WeaveCrawl Official Empirical Benchmark Suite — Reproduction Runner")
+    print("  WeaveCrawl Official Empirical Benchmark Suite — Published Results Printer")
     print(f"  Benchmark : {meta.get('title', 'Dynamic Tool Calling')}")
     print(f"  Hardware  : {meta.get('hardware', {}).get('server_cpu', 'CPU')}")
     print("#" * 80)
@@ -100,7 +100,7 @@ def main():
     reproduce_track5(data)
 
     print("\n" + "=" * 80)
-    print("  Reproduction complete. 100% of figures verified against certified data.")
+    print("  Done. Figures above are the published results read from data/. Nothing was rerun.")
     print("=" * 80 + "\n")
 
 if __name__ == "__main__":
