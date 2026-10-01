@@ -41,7 +41,7 @@ def reproduce_track2(data):
     for r in results:
         scen = r.get("scenario", "")[:40]
         tool = r.get("target_tool", "")
-        pruned = "YES (Pruned)" if r.get("cortex_pruned") else "NO (Preserved)"
+        pruned = "YES (Pruned)" if r.get("weavecrawl_pruned") else "NO (Preserved)"
         lat = f"{r.get('rejection_latency_ms', 0):.3f} ms"
         outcome = "PASSED" if r.get("hallucination_prevented") else "PASSED"
         print(f"{scen:<42} | {tool:<16} | {pruned:<16} | {lat:<10} | {outcome}")
@@ -73,7 +73,7 @@ def reproduce_track5(data):
     print_header("TRACK 5: Observation Wire Payload Compression (Greenhouse Production)")
     print(f"Raw DOM HTML Tokens          : {track5.get('raw_html_tokens', 0):,} BPE tokens")
     print(f"Full Accessibility Snapshot  : {track5.get('full_snapshot_tokens', 0):,} BPE tokens")
-    print(f"WeaveCrawl Semantic View     : {track5.get('cortex_semantic_tokens', 0):,} BPE tokens")
+    print(f"WeaveCrawl Semantic View     : {track5.get('weavecrawl_semantic_tokens', 0):,} BPE tokens")
     print(f"Payload Reduction vs HTML    : -{track5.get('payload_reduction_vs_html_pct', 0):.1f}%")
     print(f"Payload Reduction vs Snap    : -{track5.get('payload_reduction_vs_snapshot_pct', 0):.1f}%")
 

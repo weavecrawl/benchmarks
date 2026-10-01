@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "title": "Cortex Official Multi-Strategy Empirical Benchmarks",
+    "title": "WeaveCrawl Official Multi-Strategy Empirical Benchmarks",
     "timestamp": "2026-09-21T13:36:12Z",
     "hardware": {
       "server_cpu": "AMD Ryzen 7 3700X (16 threads)",
@@ -37,7 +37,7 @@
     },
     {
       "catalog_size": 10,
-      "strategy": "3. Hybrid 2-Tier Cortex (Ours)",
+      "strategy": "3. Hybrid 2-Tier WeaveCrawl (Ours)",
       "prompt_tokens": 143,
       "token_reduction_pct": 58.8,
       "top1_accuracy": 100.0,
@@ -70,7 +70,7 @@
     },
     {
       "catalog_size": 33,
-      "strategy": "3. Hybrid 2-Tier Cortex (Ours)",
+      "strategy": "3. Hybrid 2-Tier WeaveCrawl (Ours)",
       "prompt_tokens": 137,
       "token_reduction_pct": 87.4,
       "top1_accuracy": 100.0,
@@ -103,7 +103,7 @@
     },
     {
       "catalog_size": 70,
-      "strategy": "3. Hybrid 2-Tier Cortex (Ours)",
+      "strategy": "3. Hybrid 2-Tier WeaveCrawl (Ours)",
       "prompt_tokens": 135,
       "token_reduction_pct": 94.1,
       "top1_accuracy": 83.3,
@@ -136,7 +136,7 @@
     },
     {
       "catalog_size": 140,
-      "strategy": "3. Hybrid 2-Tier Cortex (Ours)",
+      "strategy": "3. Hybrid 2-Tier WeaveCrawl (Ours)",
       "prompt_tokens": 136,
       "token_reduction_pct": 97.1,
       "top1_accuracy": 83.3,
@@ -155,7 +155,7 @@
         "has_upload_trigger": false,
         "has_form_fields": false
       },
-      "cortex_pruned": true,
+      "weavecrawl_pruned": true,
       "rejection_latency_ms": 0.0291,
       "hallucination_prevented": true
     },
@@ -167,7 +167,7 @@
         "has_upload_trigger": false,
         "has_form_fields": false
       },
-      "cortex_pruned": true,
+      "weavecrawl_pruned": true,
       "rejection_latency_ms": 0.0126,
       "hallucination_prevented": true
     },
@@ -179,7 +179,7 @@
         "has_upload_trigger": false,
         "has_form_fields": false
       },
-      "cortex_pruned": true,
+      "weavecrawl_pruned": true,
       "rejection_latency_ms": 0.0105,
       "hallucination_prevented": true
     },
@@ -191,7 +191,7 @@
         "has_upload_trigger": true,
         "has_form_fields": true
       },
-      "cortex_pruned": false,
+      "weavecrawl_pruned": false,
       "rejection_latency_ms": 0.0098,
       "hallucination_prevented": true
     }
@@ -243,7 +243,7 @@
   "track5_observation_payload": {
     "raw_html_tokens": 14922,
     "full_snapshot_tokens": 4516,
-    "cortex_semantic_tokens": 2658,
+    "weavecrawl_semantic_tokens": 2658,
     "payload_reduction_vs_html_pct": 82.2,
     "payload_reduction_vs_snapshot_pct": 41.1,
     "interactive_element_refs": 63,
