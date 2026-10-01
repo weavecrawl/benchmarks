@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "weavecrawl-benchmarks"
+version = "0.1.0"
+description = "Official Empirical Benchmark Suite & Evaluation Harness for WeaveCrawl"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "WeaveCrawl Team"}
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.urls]
+Homepage = "https://weavecrawl.com"
+Documentation = "https://weavecrawl.com"

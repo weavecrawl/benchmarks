@@ -1,0 +1,252 @@
+{
+  "metadata": {
+    "title": "WeaveCrawl Official Multi-Strategy Empirical Benchmarks",
+    "timestamp": "2026-09-21T13:36:12Z",
+    "hardware": {
+      "server_cpu": "AMD Ryzen 7 3700X (16 threads)",
+      "server_gpu": "AMD Radeon RX 5500 XT (Vulkan Ollama)",
+      "ram": "32 GB DDR4"
+    },
+    "models": {
+      "router": "Small on-CPU router model",
+      "outer_llm": "Claude-3.5-Sonnet / GPT-4o / Qwen-3-4B"
+    }
+  },
+  "track1_multi_strategy_scalability": [
+    {
+      "catalog_size": 10,
+      "strategy": "1. Naive Full Injection (Baseline)",
+      "prompt_tokens": 347,
+      "token_reduction_pct": 0.0,
+      "top1_accuracy": 50.0,
+      "top3_recall": null,
+      "filter_latency_ms": 0.0,
+      "routing_latency_ms": 1925.6,
+      "total_router_latency_ms": 1925.6
+    },
+    {
+      "catalog_size": 10,
+      "strategy": "2. Tier 1 DOM Filter Only",
+      "prompt_tokens": 292,
+      "token_reduction_pct": 15.9,
+      "top1_accuracy": null,
+      "top3_recall": 100.0,
+      "filter_latency_ms": 0.011,
+      "routing_latency_ms": 0.0,
+      "total_router_latency_ms": 0.011
+    },
+    {
+      "catalog_size": 10,
+      "strategy": "3. Hybrid 2-Tier WeaveCrawl (Ours)",
+      "prompt_tokens": 143,
+      "token_reduction_pct": 58.8,
+      "top1_accuracy": 100.0,
+      "top3_recall": 100.0,
+      "filter_latency_ms": 0.022,
+      "routing_latency_ms": 829.6,
+      "total_router_latency_ms": 829.6
+    },
+    {
+      "catalog_size": 33,
+      "strategy": "1. Naive Full Injection (Baseline)",
+      "prompt_tokens": 1089,
+      "token_reduction_pct": 0.0,
+      "top1_accuracy": 50.0,
+      "top3_recall": null,
+      "filter_latency_ms": 0.0,
+      "routing_latency_ms": 1433.8,
+      "total_router_latency_ms": 1433.8
+    },
+    {
+      "catalog_size": 33,
+      "strategy": "2. Tier 1 DOM Filter Only",
+      "prompt_tokens": 911,
+      "token_reduction_pct": 16.3,
+      "top1_accuracy": null,
+      "top3_recall": 100.0,
+      "filter_latency_ms": 0.023,
+      "routing_latency_ms": 0.0,
+      "total_router_latency_ms": 0.023
+    },
+    {
+      "catalog_size": 33,
+      "strategy": "3. Hybrid 2-Tier WeaveCrawl (Ours)",
+      "prompt_tokens": 137,
+      "token_reduction_pct": 87.4,
+      "top1_accuracy": 100.0,
+      "top3_recall": 100.0,
+      "filter_latency_ms": 0.035,
+      "routing_latency_ms": 1049.9,
+      "total_router_latency_ms": 1049.9
+    },
+    {
+      "catalog_size": 70,
+      "strategy": "1. Naive Full Injection (Baseline)",
+      "prompt_tokens": 2288,
+      "token_reduction_pct": 0.0,
+      "top1_accuracy": 66.7,
+      "top3_recall": null,
+      "filter_latency_ms": 0.0,
+      "routing_latency_ms": 1792.9,
+      "total_router_latency_ms": 1792.9
+    },
+    {
+      "catalog_size": 70,
+      "strategy": "2. Tier 1 DOM Filter Only",
+      "prompt_tokens": 2110,
+      "token_reduction_pct": 7.8,
+      "top1_accuracy": null,
+      "top3_recall": 100.0,
+      "filter_latency_ms": 0.028,
+      "routing_latency_ms": 0.0,
+      "total_router_latency_ms": 0.028
+    },
+    {
+      "catalog_size": 70,
+      "strategy": "3. Hybrid 2-Tier WeaveCrawl (Ours)",
+      "prompt_tokens": 135,
+      "token_reduction_pct": 94.1,
+      "top1_accuracy": 83.3,
+      "top3_recall": 100.0,
+      "filter_latency_ms": 0.046,
+      "routing_latency_ms": 1096.6,
+      "total_router_latency_ms": 1096.6
+    },
+    {
+      "catalog_size": 140,
+      "strategy": "1. Naive Full Injection (Baseline)",
+      "prompt_tokens": 4647,
+      "token_reduction_pct": 0.0,
+      "top1_accuracy": 50.0,
+      "top3_recall": null,
+      "filter_latency_ms": 0.0,
+      "routing_latency_ms": 2439.8,
+      "total_router_latency_ms": 2439.8
+    },
+    {
+      "catalog_size": 140,
+      "strategy": "2. Tier 1 DOM Filter Only",
+      "prompt_tokens": 4469,
+      "token_reduction_pct": 3.8,
+      "top1_accuracy": null,
+      "top3_recall": 100.0,
+      "filter_latency_ms": 0.032,
+      "routing_latency_ms": 0.0,
+      "total_router_latency_ms": 0.032
+    },
+    {
+      "catalog_size": 140,
+      "strategy": "3. Hybrid 2-Tier WeaveCrawl (Ours)",
+      "prompt_tokens": 136,
+      "token_reduction_pct": 97.1,
+      "top1_accuracy": 83.3,
+      "top3_recall": 100.0,
+      "filter_latency_ms": 0.054,
+      "routing_latency_ms": 1050.8,
+      "total_router_latency_ms": 1050.8
+    }
+  ],
+  "track2_negative_rejection": [
+    {
+      "scenario": "Upload on pure text article (No inputs, no upload intent)",
+      "target_tool": "upload_file",
+      "dom_state": {
+        "has_file_input": false,
+        "has_upload_trigger": false,
+        "has_form_fields": false
+      },
+      "weavecrawl_pruned": true,
+      "rejection_latency_ms": 0.0291,
+      "hallucination_prevented": true
+    },
+    {
+      "scenario": "Auto fill on landing splash screen",
+      "target_tool": "auto_fill",
+      "dom_state": {
+        "has_file_input": false,
+        "has_upload_trigger": false,
+        "has_form_fields": false
+      },
+      "weavecrawl_pruned": true,
+      "rejection_latency_ms": 0.0126,
+      "hallucination_prevented": true
+    },
+    {
+      "scenario": "Field errors on empty search view",
+      "target_tool": "field_errors",
+      "dom_state": {
+        "has_file_input": false,
+        "has_upload_trigger": false,
+        "has_form_fields": false
+      },
+      "weavecrawl_pruned": true,
+      "rejection_latency_ms": 0.0105,
+      "hallucination_prevented": true
+    },
+    {
+      "scenario": "Shadow DOM file input (Custom attach button present)",
+      "target_tool": "upload_file",
+      "dom_state": {
+        "has_file_input": false,
+        "has_upload_trigger": true,
+        "has_form_fields": true
+      },
+      "weavecrawl_pruned": false,
+      "rejection_latency_ms": 0.0098,
+      "hallucination_prevented": true
+    }
+  ],
+  "track3_field_decisions": {
+    "total_fields": 94,
+    "evaluated_fields": 25,
+    "overall_agreement_pct": 84.0,
+    "calibrations": {
+      "p>=0.0": {
+        "samples": 25,
+        "correct": 21,
+        "accuracy_pct": 84.0
+      },
+      "p>=0.5": {
+        "samples": 21,
+        "correct": 19,
+        "accuracy_pct": 90.5
+      },
+      "p>=0.7": {
+        "samples": 18,
+        "correct": 16,
+        "accuracy_pct": 88.9
+      },
+      "p>=0.8": {
+        "samples": 15,
+        "correct": 14,
+        "accuracy_pct": 93.3
+      },
+      "p>=0.9": {
+        "samples": 14,
+        "correct": 14,
+        "accuracy_pct": 100.0
+      }
+    },
+    "ece": 0.072,
+    "avg_latency_ms": 2097.9,
+    "p95_latency_ms": 2255.6
+  },
+  "track4_real_sqlite_replay": {
+    "cold_discovery_ms": 1654.9,
+    "real_sqlite_path_resolution_ms": 0.223,
+    "path_planning_speedup_vs_cold_discovery": 7415.3,
+    "nodes_in_graph": 25,
+    "path_steps_resolved": 15,
+    "tokens_saved_per_turn": "100% (0 LLM tokens during graph replay)",
+    "benchmark_scope": "Resolves multi-step navigation topology from local SQLite; eliminates cold semantic discovery."
+  },
+  "track5_observation_payload": {
+    "raw_html_tokens": 14922,
+    "full_snapshot_tokens": 4516,
+    "weavecrawl_semantic_tokens": 2658,
+    "payload_reduction_vs_html_pct": 82.2,
+    "payload_reduction_vs_snapshot_pct": 41.1,
+    "interactive_element_refs": 63,
+    "tokenizer_used": "OpenAI cl100k_base (BPE)"
+  }
+}
