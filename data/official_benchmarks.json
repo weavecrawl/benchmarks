@@ -1,0 +1,36 @@
+{
+  "metadata": {
+    "title": "WeaveCrawl WebVoyager subset (A1-lite), 2026-10-24",
+    "task_set": "40 of the 588 browser-use scored WebVoyager tasks (browser-use/eval 0ee7ae0), picked by the published seed a1-lite-2026-10-11, 15 sites",
+    "browser": "WeaveCrawl server browser (mode b), real Chrome 150",
+    "judge": "claude-haiku-5-5, 3 votes, two SUCCESS pass",
+    "repetitions": 1,
+    "note": "Live third-party sites: a task passes or fails with the site of the day. Every number below is copied from the linked summary."
+  },
+  "runs": [
+    {
+      "agent_model": "claude-haiku-5-5",
+      "source": "results/2026-10-24/webvoyager-haiku-summary.md",
+      "run_id": "bench-20261024T130352Z-ea16",
+      "raw": {"passed": 26, "of": 40, "pct": 65.0, "ci95_pct": [49.5, 77.9]},
+      "doable_today": {"passed": 26, "of": 38, "pct": 68.4, "ci95_pct": [52.5, 80.9]},
+      "unblocked": {"passed": 26, "of": 36, "pct": 72.2, "ci95_pct": [56.0, 84.2]},
+      "blocked_by_bot_wall": 4,
+      "agent_turns": 501,
+      "wall_seconds": 1513,
+      "equivalent_cost_usd": 0.3538
+    },
+    {
+      "agent_model": "claude-sonnet-5-5",
+      "source": "results/2026-10-24/webvoyager-sonnet-summary.md",
+      "run_id": "bench-20261024T152830Z-6fa5",
+      "raw": {"passed": 29, "of": 40, "pct": 72.5, "ci95_pct": [57.2, 83.9]},
+      "doable_today": {"passed": 29, "of": 38, "pct": 76.3, "ci95_pct": [60.8, 87.0]},
+      "unblocked": {"passed": 29, "of": 37, "pct": 78.4, "ci95_pct": [62.8, 88.6]},
+      "blocked_by_bot_wall": 3,
+      "agent_turns": 292,
+      "wall_seconds": 951,
+      "equivalent_cost_usd": 3.0461
+    }
+  ]
+}
