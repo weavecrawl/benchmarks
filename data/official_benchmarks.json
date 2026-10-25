@@ -82,6 +82,46 @@
       "agent_turns": 271,
       "wall_seconds": 877,
       "equivalent_cost_usd": 3.0558
+    },
+    {
+      "agent_model": "claude-sonnet-5-5",
+      "browser": "WeaveCrawl Chrome extension (mode a), the person's own Chrome",
+      "source": "results/2026-10-25/webvoyager-sonnet-chrome-summary.md",
+      "run_id": "bench-20261025T111133Z-306b",
+      "run_date": "2026-10-25",
+      "raw": {
+        "passed": 32,
+        "of": 40,
+        "pct": 80.0,
+        "ci95_pct": [
+          65.2,
+          89.5
+        ]
+      },
+      "doable_today": {
+        "passed": 32,
+        "of": 38,
+        "pct": 84.2,
+        "ci95_pct": [
+          69.6,
+          92.6
+        ]
+      },
+      "unblocked": {
+        "passed": 32,
+        "of": 37,
+        "pct": 86.5,
+        "ci95_pct": [
+          72.0,
+          94.1
+        ]
+      },
+      "blocked_by_bot_wall": 0,
+      "held_for_person": 1,
+      "failed_by_judge": 7,
+      "agent_turns": 357,
+      "wall_seconds": 1622,
+      "equivalent_cost_usd": 3.6173
     }
   ],
   "history": [
