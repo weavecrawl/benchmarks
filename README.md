@@ -33,6 +33,18 @@ WeaveCrawl lets an AI assistant use a real web browser the way a person does: op
 
 Sonnet went from 72.5% to 80% on the same tasks. Haiku's raw score stayed at 65%; more of its tasks were recognised as bot walls (6, was 4), so its score without blocked sites rose from 72.2% to 76.5%.
 
+## In your own Chrome
+
+We also ran the same 40 tasks with the stronger model (Sonnet) inside a person's own Chrome, through the WeaveCrawl Chrome extension, on 2026-10-25 (after the release that day).
+
+- **Tasks finished correctly: 32 of 40 (80%)**, range 65.2–89.5%. On the server browser the same tasks also scored 80%.
+- Ignoring sites we could not do (2 tasks) and the one task held for a person (Amazon add to cart, held on purpose): **32 of 37 (86.5%)**, range 72.0–94.1%.
+- 7 tasks were marked wrong by the judge. The run's own validity check passed.
+- Working time for all 40 tasks: 27 min (about 41 s per task).
+- Cost: $3.62 equivalent (run on a subscription, not billed).
+
+One run only. The numbers are not directly comparable with the server-browser table above (a real browser with its own sign-ins). Report: [Sonnet in Chrome](results/2026-10-25/webvoyager-sonnet-chrome-summary.md).
+
 ## How to read this
 
 | Term | Meaning |
@@ -45,7 +57,7 @@ Sonnet went from 72.5% to 80% on the same tasks. Haiku's raw score stayed at 65%
 
 ## What we did not test
 
-- **Only the server browser** (WeaveCrawl running its own Chrome on our server). Not the Chrome extension or the desktop app. A run in a person's own Chrome is not published yet: a device went offline mid-run.
+- **Not the desktop app.** The headline table is the server browser; the Chrome extension was run once (Sonnet only, see above). The desktop app is not tested.
 - **One run each per day.** Each agent did the 40 tasks once on 2026-10-24 and once on 2026-10-25. No averaging over repeats.
 - **40 of 588 tasks.** A small, fixed sample, chosen by a published random seed.
 - **No head-to-head with other products.** We did not run any competitor ourselves. See [competitor matrix](docs/competitor_matrix.md).
