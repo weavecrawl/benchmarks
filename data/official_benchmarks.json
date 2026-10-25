@@ -1,36 +1,163 @@
 {
   "metadata": {
-    "title": "WeaveCrawl WebVoyager subset (A1-lite), 2026-10-24",
+    "title": "WeaveCrawl WebVoyager subset (A1-lite), 2026-10-25",
     "task_set": "40 of the 588 browser-use scored WebVoyager tasks (browser-use/eval 0ee7ae0), picked by the published seed a1-lite-2026-10-11, 15 sites",
     "browser": "WeaveCrawl server browser (mode b), real Chrome 150",
     "judge": "claude-haiku-5-5, 3 votes, two SUCCESS pass",
     "repetitions": 1,
-    "note": "Live third-party sites: a task passes or fails with the site of the day. Every number below is copied from the linked summary."
+    "note": "Live third-party sites: a task passes or fails with the site of the day. Every number below is copied from the linked summary. 'runs' is the latest set (2026-10-25); 'history' is the first set (2026-10-24).",
+    "changes_since_previous_runs": "WeaveCrawl now waits properly for in-page loading; Amazon's automated-access page counts as a bot wall."
   },
   "runs": [
     {
       "agent_model": "claude-haiku-5-5",
+      "source": "results/2026-10-25/webvoyager-haiku-summary.md",
+      "run_id": "bench-20261024T234442Z-53f5",
+      "run_date": "2026-10-25",
+      "raw": {
+        "passed": 26,
+        "of": 40,
+        "pct": 65.0,
+        "ci95_pct": [
+          49.5,
+          77.9
+        ]
+      },
+      "doable_today": {
+        "passed": 26,
+        "of": 38,
+        "pct": 68.4,
+        "ci95_pct": [
+          52.5,
+          80.9
+        ]
+      },
+      "unblocked": {
+        "passed": 26,
+        "of": 34,
+        "pct": 76.5,
+        "ci95_pct": [
+          60.0,
+          87.6
+        ]
+      },
+      "blocked_by_bot_wall": 6,
+      "agent_turns": 434,
+      "wall_seconds": 1302,
+      "equivalent_cost_usd": 0.2866
+    },
+    {
+      "agent_model": "claude-sonnet-5-5",
+      "source": "results/2026-10-25/webvoyager-sonnet-summary.md",
+      "run_id": "bench-20261025T001545Z-2b97",
+      "run_date": "2026-10-25",
+      "raw": {
+        "passed": 32,
+        "of": 40,
+        "pct": 80.0,
+        "ci95_pct": [
+          65.2,
+          89.5
+        ]
+      },
+      "doable_today": {
+        "passed": 32,
+        "of": 38,
+        "pct": 84.2,
+        "ci95_pct": [
+          69.6,
+          92.6
+        ]
+      },
+      "unblocked": {
+        "passed": 32,
+        "of": 36,
+        "pct": 88.9,
+        "ci95_pct": [
+          74.7,
+          95.6
+        ]
+      },
+      "blocked_by_bot_wall": 4,
+      "agent_turns": 271,
+      "wall_seconds": 877,
+      "equivalent_cost_usd": 3.0558
+    }
+  ],
+  "history": [
+    {
+      "agent_model": "claude-haiku-5-5",
       "source": "results/2026-10-24/webvoyager-haiku-summary.md",
       "run_id": "bench-20261024T130352Z-ea16",
-      "raw": {"passed": 26, "of": 40, "pct": 65.0, "ci95_pct": [49.5, 77.9]},
-      "doable_today": {"passed": 26, "of": 38, "pct": 68.4, "ci95_pct": [52.5, 80.9]},
-      "unblocked": {"passed": 26, "of": 36, "pct": 72.2, "ci95_pct": [56.0, 84.2]},
+      "raw": {
+        "passed": 26,
+        "of": 40,
+        "pct": 65.0,
+        "ci95_pct": [
+          49.5,
+          77.9
+        ]
+      },
+      "doable_today": {
+        "passed": 26,
+        "of": 38,
+        "pct": 68.4,
+        "ci95_pct": [
+          52.5,
+          80.9
+        ]
+      },
+      "unblocked": {
+        "passed": 26,
+        "of": 36,
+        "pct": 72.2,
+        "ci95_pct": [
+          56.0,
+          84.2
+        ]
+      },
       "blocked_by_bot_wall": 4,
       "agent_turns": 501,
       "wall_seconds": 1513,
-      "equivalent_cost_usd": 0.3538
+      "equivalent_cost_usd": 0.3538,
+      "run_date": "2026-10-24"
     },
     {
       "agent_model": "claude-sonnet-5-5",
       "source": "results/2026-10-24/webvoyager-sonnet-summary.md",
       "run_id": "bench-20261024T152830Z-6fa5",
-      "raw": {"passed": 29, "of": 40, "pct": 72.5, "ci95_pct": [57.2, 83.9]},
-      "doable_today": {"passed": 29, "of": 38, "pct": 76.3, "ci95_pct": [60.8, 87.0]},
-      "unblocked": {"passed": 29, "of": 37, "pct": 78.4, "ci95_pct": [62.8, 88.6]},
+      "raw": {
+        "passed": 29,
+        "of": 40,
+        "pct": 72.5,
+        "ci95_pct": [
+          57.2,
+          83.9
+        ]
+      },
+      "doable_today": {
+        "passed": 29,
+        "of": 38,
+        "pct": 76.3,
+        "ci95_pct": [
+          60.8,
+          87.0
+        ]
+      },
+      "unblocked": {
+        "passed": 29,
+        "of": 37,
+        "pct": 78.4,
+        "ci95_pct": [
+          62.8,
+          88.6
+        ]
+      },
       "blocked_by_bot_wall": 3,
       "agent_turns": 292,
       "wall_seconds": 951,
-      "equivalent_cost_usd": 3.0461
+      "equivalent_cost_usd": 3.0461,
+      "run_date": "2026-10-24"
     }
   ]
 }

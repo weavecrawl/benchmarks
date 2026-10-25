@@ -1,7 +1,7 @@
 # How the test works
 
 ## In short
-Two AI models each tried the same 40 tasks on real websites. A separate AI checked every answer. Nothing was tuned per site. Full details and every task result: [Haiku report](results/2026-10-24/webvoyager-haiku-summary.md), [Sonnet report](results/2026-10-24/webvoyager-sonnet-summary.md).
+Two AI models each tried the same 40 tasks on real websites. A separate AI checked every answer. Nothing was tuned per site. Full details and every task result for the latest runs (2026-10-25): [Haiku report](../results/2026-10-25/webvoyager-haiku-summary.md), [Sonnet report](../results/2026-10-25/webvoyager-sonnet-summary.md). First runs (2026-10-24): [Haiku](../results/2026-10-24/webvoyager-haiku-summary.md), [Sonnet](../results/2026-10-24/webvoyager-sonnet-summary.md).
 
 | Step | What happens |
 | :-- | :-- |
@@ -13,7 +13,7 @@ Two AI models each tried the same 40 tasks on real websites. A separate AI check
 | **Live page wins** | The judge goes by what the live page shows. Where the old reference answer is out of date, the live page decides, and the task is flagged. Both reports list these tasks. |
 | **No guessing** | A pass needs real browser use. An answer from memory fails. |
 | **Re-dated tasks** | Five tasks with past dates (flights, hotels) were moved forward two years. Listed in the reports. |
-| **No reruns** | Zero reruns happened. A task the agent completed wrongly is never run again. |
+| **No reruns** | Zero reruns happened in either set of runs. A task the agent completed wrongly is never run again. |
 
 ## Scores
 - **Raw:** passed ÷ 40.
@@ -21,7 +21,7 @@ Two AI models each tried the same 40 tasks on real websites. A separate AI check
 - **Unblocked:** also leaves out tasks a bot wall stopped.
 
 ## Limits
-Live sites change, the judge is an AI (it reads text and screenshots, not a human), and the judge is not the one used in the original WebVoyager paper or by other published scores. Treat the score as a solid snapshot, not an exact constant. Each run was one pass; ranges are in the reports.
+Live sites change, the judge is an AI (it reads text and screenshots, not a human), and the judge is not the one used in the original WebVoyager paper or by other published scores. Treat the score as a solid snapshot, not an exact constant. Each run was one pass (one per model per day); ranges are in the reports.
 
 ## Machine
-One shared server (AMD Ryzen 7 3700X), 6 CPU cores and 3 GB memory reserved per run, real Chrome 150. Times are the agents' working time added up over the 40 tasks (includes site load time); the whole Haiku run, with judging, took about 35 min. Neither run timed individual calls.
+One shared server (AMD Ryzen 7 3700X), 6 CPU cores and 3 GB memory reserved per run, real Chrome 150. Times are the agents' working time added up over the 40 tasks (includes site load time); the whole Haiku run on 2026-10-25, with judging, took about 31 min. Neither run timed individual calls.
