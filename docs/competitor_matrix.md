@@ -4,7 +4,7 @@ We did **not** run any competitor. The rows below are what each vendor or leader
 
 | Product | Published WebVoyager score | Source | How their setup differs |
 | :-- | :--: | :-- | :-- |
-| **WeaveCrawl** (this repo) | 65% (Haiku), 72.5% (Sonnet) raw; 72–78% without blocked sites | [Haiku run](../results/2026-10-24/webvoyager-haiku-summary.md), [Sonnet run](../results/2026-10-24/webvoyager-sonnet-summary.md) | 40-task sample, live sites, bot-walled tasks counted as misses, one run, AI judge on page text |
+| **WeaveCrawl** (this repo) | 65% (Haiku), 80% (Sonnet) raw; 76.5–88.9% without blocked sites (2026-10-25) | [Haiku run](../results/2026-10-25/webvoyager-haiku-summary.md), [Sonnet run](../results/2026-10-25/webvoyager-sonnet-summary.md) | 40-task sample, live sites, bot-walled tasks counted as misses, one run, AI judge on page text |
 | browser-control (Fable 5) | 99.19% (self-reported) | [Steel leaderboard](https://leaderboard.steel.dev/leaderboards/webvoyager), updated 2026-10-11 | Their own harness and judge; see [their repo](https://github.com/omxyz/webvoyager) |
 | Browser Use | 89.1% | [Browser Use technical report](https://browser-use.com/posts/sota-technical-report) | Their own run on 586 tasks after removing 55 they judged unsolvable or outdated. A separate team (Notte) reported it could not replicate this. |
 | Skyvern | 85.85% | [Skyvern blog](https://www.skyvern.com/blog/skyvern-2-0-webvoyager-benchmark-results/) | Their own run, their own setup |

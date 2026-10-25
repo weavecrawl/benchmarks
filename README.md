@@ -10,32 +10,43 @@
 
 WeaveCrawl lets an AI assistant use a real web browser the way a person does: open a site, read it, click, search, and report back. We tested it on **40 everyday tasks on real, live websites** (find a flight price, check a GitHub issue, look up a recipe or a course). The tasks are a fixed sample of a well-known public test called WebVoyager.
 
+**Latest results: 2026-10-25** (after two fixes, see below)
+
 | | Cheapest AI model (Haiku) | Stronger AI model (Sonnet) |
 | :-- | :--: | :--: |
-| **Tasks finished correctly** | **26 of 40 (65%)** | **29 of 40 (72.5%)** |
-| Same, ignoring sites that blocked us with a "prove you are human" wall | 72% | 78% |
-| Agent working time for all 40 tasks | 25 min | 16 min |
-| Average time per task | about 38 s | about 24 s |
-| Cost for all 40 tasks | $0.35 | $3.05 |
+| **Tasks finished correctly** | **26 of 40 (65%)** | **32 of 40 (80%)** |
+| Same, ignoring sites that blocked us with a "prove you are human" wall | 76.5% (26 of 34) | 88.9% (32 of 36) |
+| Agent working time for all 40 tasks | 22 min | 15 min |
+| Average time per task | about 33 s | about 22 s |
+| Cost for all 40 tasks | $0.29 | $3.06 |
 | Average cost per task | about $0.01 | about $0.08 |
-| Report | [Haiku run](results/2026-10-24/webvoyager-haiku-summary.md) | [Sonnet run](results/2026-10-24/webvoyager-sonnet-summary.md) |
+| Report | [Haiku run](results/2026-10-25/webvoyager-haiku-summary.md) | [Sonnet run](results/2026-10-25/webvoyager-sonnet-summary.md) |
 
-**What this means:** with WeaveCrawl, roughly 3 in 4 real web tasks get done on their own, in about half a minute each and for a cent or a few cents. The cheaper model is already usable; the stronger one finishes more tasks and runs faster. Cost is the price the AI vendor's tool reports for the model use; it was not billed (run on a subscription).
+**What this means:** with WeaveCrawl, the stronger model finishes 4 in 5 real web tasks on its own, and about 9 in 10 on sites that let a program in. It takes about 22 seconds and under 10 cents per task. The cheaper model finishes about 2 in 3 for about a cent each, so it is already usable. Cost is the price the AI vendor's tool reports for the model use; it was not billed (run on a subscription).
+
+**What changed since the first run (2026-10-24):** WeaveCrawl now waits properly for a page to finish loading its content, and Amazon's "automated access" page now counts as a bot wall instead of an ordinary failure. Same 40 tasks, same setup.
+
+| History | Haiku | Sonnet | Reports |
+| :-- | :--: | :--: | :-- |
+| 2026-10-25 (latest) | 26 of 40 (65%) | 32 of 40 (80%) | [Haiku](results/2026-10-25/webvoyager-haiku-summary.md), [Sonnet](results/2026-10-25/webvoyager-sonnet-summary.md) |
+| 2026-10-24 (first run) | 26 of 40 (65%) | 29 of 40 (72.5%) | [Haiku](results/2026-10-24/webvoyager-haiku-summary.md), [Sonnet](results/2026-10-24/webvoyager-sonnet-summary.md) |
+
+Sonnet went from 72.5% to 80% on the same tasks. Haiku's raw score stayed at 65%; more of its tasks were recognised as bot walls (6, was 4), so its score without blocked sites rose from 72.2% to 76.5%.
 
 ## How to read this
 
 | Term | Meaning |
 | :-- | :-- |
 | **Raw score** | All 40 tasks, counted as run. The honest headline. |
-| **Without blocked sites** | Some sites show a "prove you are human" check. A person can pass it; our test never tries to. Those tasks are counted as misses in the raw score and left out here. Haiku hit 4 such walls, Sonnet 3. |
-| **Range (95%)** | With only 40 tasks, a score is not exact. Raw: Haiku 49.5–77.9%, Sonnet 57.2–83.9%. The two scores overlap, so we do not claim one model is clearly better. |
+| **Without blocked sites** | Some sites show a "prove you are human" check. A person can pass it; our test never tries to. Those tasks are counted as misses in the raw score and left out here. On 2026-10-25 Haiku hit 6 such walls, Sonnet 4 (two of them are the Allrecipes tasks we marked as not doable from our server address). |
+| **Range (95%)** | With only 40 tasks, a score is not exact. Raw: Haiku 49.5–77.9%, Sonnet 65.2–89.5%. The two ranges still overlap, so we do not claim one model is clearly better. |
 | **Live sites** | Websites change daily. A re-run next week can score differently. |
 | **Judge** | A second AI checks each answer against the live page, not against old answers. See [methodology](docs/methodology.md). |
 
 ## What we did not test
 
-- **Only the server browser** (WeaveCrawl running its own Chrome on our server). Not the Chrome extension or the desktop app.
-- **One run each.** Each agent did the 40 tasks once. No averaging over repeats.
+- **Only the server browser** (WeaveCrawl running its own Chrome on our server). Not the Chrome extension or the desktop app. A run in a person's own Chrome is not published yet: a device went offline mid-run.
+- **One run each per day.** Each agent did the 40 tasks once on 2026-10-24 and once on 2026-10-25. No averaging over repeats.
 - **40 of 588 tasks.** A small, fixed sample, chosen by a published random seed.
 - **No head-to-head with other products.** We did not run any competitor ourselves. See [competitor matrix](docs/competitor_matrix.md).
 - **WebVoyager is close to "solved" across the industry.** Published scores for leading products run from about 86% to 99% (self-reported; see [Steel leaderboard](https://leaderboard.steel.dev/leaderboards/webvoyager)), so it separates leaders poorly. Those scores use other setups and other judges, so they are **not directly comparable** with ours.
@@ -43,7 +54,7 @@ WeaveCrawl lets an AI assistant use a real web browser the way a person does: op
 
 ## Files
 
-[Methodology](docs/methodology.md) · [Competitor matrix](docs/competitor_matrix.md) · [Data](data/official_benchmarks.json) · [Full per-task reports](results/2026-10-24/) · [Print the numbers](scripts/reproduce_benchmarks.py)
+[Methodology](docs/methodology.md) · [Competitor matrix](docs/competitor_matrix.md) · [Data](data/official_benchmarks.json) · [Full per-task reports](results/2026-10-25/) · [first run](results/2026-10-24/) · [Print the numbers](scripts/reproduce_benchmarks.py)
 
 `python3 scripts/reproduce_benchmarks.py` prints the published numbers offline. It does not re-run the benchmark.
 
