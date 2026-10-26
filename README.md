@@ -63,7 +63,7 @@ Same 40 tasks, same model, same Mac, later on 2026-10-26, with a newer release w
 
 - **Tasks finished correctly: 33 of 40 (82.5%)**, range 68.0–91.3%.
 - Without the tasks blocked by a bot wall or a site fault: **33 of 38 (86.8%)**, range 72.7–94.2%.
-- 6 tasks were marked wrong by the judge. 1 task (Amazon add to cart) was held for a person, on purpose. The run's own validity check passed.
+- 6 tasks were marked wrong by the judge. 1 task (Amazon) was held for a person, on purpose. The run's own validity check passed.
 - What changed: same score, about 8% fewer steps (302 instead of 328) and about 15% less time.
 - Working time for all 40 tasks: 25 min (about 37 s per task).
 - Cost: $3.34 equivalent (run on a subscription, not billed).
