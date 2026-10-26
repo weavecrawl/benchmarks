@@ -2,7 +2,7 @@
 reproduce_benchmarks.py - print the published WeaveCrawl benchmark numbers.
 
 Reads data/official_benchmarks.json offline and prints it. It does not rerun
-the benchmark; the full per-task results are in results/2026-10-25/ (first run: results/2026-10-24/).
+the benchmark; the full per-task results are in results/2026-10-25/ (desktop app run: results/2026-10-26/; first run: results/2026-10-24/).
 """
 
 import json

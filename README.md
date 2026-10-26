@@ -45,6 +45,18 @@ We also ran the same 40 tasks with the stronger model (Sonnet) inside a person's
 
 One run only. The numbers are not directly comparable with the server-browser table above (a real browser with its own sign-ins). Report: [Sonnet in Chrome](results/2026-10-25/webvoyager-sonnet-chrome-summary.md).
 
+## In the desktop app
+
+We also ran the same 40 tasks with the stronger model (Sonnet) in the WeaveCrawl desktop app, on a person's own Mac, on 2026-10-26 (same release as the 2026-10-25 runs).
+
+- **Tasks finished correctly: 33 of 40 (82.5%)**, range 68.0–91.3%.
+- Ignoring the one task held for a person (Amazon add to cart, held on purpose): **33 of 39 (84.6%)**, range 70.3–92.8%.
+- 5 tasks were marked wrong by the judge. 1 task (Coursera) gave no final answer before the time limit. The run's own validity check passed.
+- Working time for all 40 tasks: 29 min (about 44 s per task).
+- Cost: $3.42 equivalent (run on a subscription, not billed).
+
+One run only. The numbers are not directly comparable with the server-browser table above (a real Mac with its own sign-ins). Report: [Sonnet in the desktop app](results/2026-10-26/webvoyager-sonnet-desktop-summary.md).
+
 ## How to read this
 
 | Term | Meaning |
@@ -57,7 +69,6 @@ One run only. The numbers are not directly comparable with the server-browser ta
 
 ## What we did not test
 
-- **Not the desktop app.** The headline table is the server browser; the Chrome extension was run once (Sonnet only, see above). The desktop app is not tested.
 - **One run each per day.** Each agent did the 40 tasks once on 2026-10-24 and once on 2026-10-25. No averaging over repeats.
 - **40 of 588 tasks.** A small, fixed sample, chosen by a published random seed.
 - **No head-to-head with other products.** We did not run any competitor ourselves. See [competitor matrix](docs/competitor_matrix.md).
@@ -66,7 +77,7 @@ One run only. The numbers are not directly comparable with the server-browser ta
 
 ## Files
 
-[Methodology](docs/methodology.md) · [Competitor matrix](docs/competitor_matrix.md) · [Data](data/official_benchmarks.json) · [Full per-task reports](results/2026-10-25/) · [first run](results/2026-10-24/) · [Print the numbers](scripts/reproduce_benchmarks.py)
+[Methodology](docs/methodology.md) · [Competitor matrix](docs/competitor_matrix.md) · [Data](data/official_benchmarks.json) · [Full per-task reports](results/2026-10-25/) · [desktop app run](results/2026-10-26/) · [first run](results/2026-10-24/) · [Print the numbers](scripts/reproduce_benchmarks.py)
 
 `python3 scripts/reproduce_benchmarks.py` prints the published numbers offline. It does not re-run the benchmark.
 
