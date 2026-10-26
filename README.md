@@ -57,6 +57,19 @@ We also ran the same 40 tasks with the stronger model (Sonnet) in the WeaveCrawl
 
 One run only. The numbers are not directly comparable with the server-browser table above (a real Mac with its own sign-ins). Report: [Sonnet in the desktop app](results/2026-10-26/webvoyager-sonnet-desktop-summary.md).
 
+### Latest desktop run (newer release)
+
+Same 40 tasks, same model, same Mac, later on 2026-10-26, with a newer release where opening a page also returns its outline in the same step.
+
+- **Tasks finished correctly: 33 of 40 (82.5%)**, range 68.0–91.3%.
+- Without the tasks blocked by a bot wall or a site fault: **33 of 38 (86.8%)**, range 72.7–94.2%.
+- 6 tasks were marked wrong by the judge. 1 task (Amazon add to cart) was held for a person, on purpose. The run's own validity check passed.
+- What changed: same score, about 8% fewer steps (302 instead of 328) and about 15% less time.
+- Working time for all 40 tasks: 25 min (about 37 s per task).
+- Cost: $3.34 equivalent (run on a subscription, not billed).
+
+One run only, not directly comparable with the server-browser table above. Report: [Sonnet in the desktop app, latest run](results/2026-10-26/webvoyager-sonnet-desktop-2-summary.md).
+
 ## How to read this
 
 | Term | Meaning |
