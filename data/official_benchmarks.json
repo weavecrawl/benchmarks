@@ -163,6 +163,22 @@
       "agent_turns": 328,
       "wall_seconds": 1766,
       "equivalent_cost_usd": 3.4155
+    },
+    {
+      "agent_model": "claude-sonnet-5-5",
+      "browser": "WeaveCrawl desktop app (mode c), the person's own Mac",
+      "source": "results/2026-10-26/webvoyager-sonnet-desktop-2-summary.md",
+      "run_id": "bench-20261026T165455Z-f5ff",
+      "run_date": "2026-10-26",
+      "raw": {"passed": 33, "of": 40, "pct": 82.5, "ci95_pct": [68.0, 91.3]},
+      "doable_today": {"passed": 33, "of": 39, "pct": 84.6, "ci95_pct": [70.3, 92.8]},
+      "unblocked": {"passed": 33, "of": 38, "pct": 86.8, "ci95_pct": [72.7, 94.2]},
+      "blocked_by_bot_wall": 0,
+      "held_for_person": 1,
+      "failed_by_judge": 6,
+      "agent_turns": 302,
+      "wall_seconds": 1489,
+      "equivalent_cost_usd": 3.3413
     }
   ],
   "history": [

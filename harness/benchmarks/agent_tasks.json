@@ -1,0 +1,133 @@
+{
+ "why": "The fixed input of the agent suite (A1-lite): which 40 WebVoyager tasks, the agent's and the judge's prompts, the models and every cap. run.py records the sha256 of this file in env.json. Nothing here is random: the ids are what `agent_rules.select` makes of the pinned data and the published seed, and the suite refuses to start when they differ.",
+ "suite": "A1-lite",
+ "source": {
+  "repo": "browser-use/eval",
+  "commit": "0ee7ae0ed296bfb4f93802a63149fb1a70c06555",
+  "license": "Apache-2.0",
+  "note": "WebVoyager tasks with dates moved ahead, the 55 impossible ids browser-use dropped, and the reference answers. The pool is 643 - 55 = 588 tasks (browser-use quotes 586).",
+  "sha256": {
+   "data/WebVoyager_data.jsonl": "454cc4fa1adc9a38358de1329682750ca62edfcd2d7a35fa0843bc2669e2ff19",
+   "data/WebVoyagerImpossibleTasks.json": "53cbc26ad16624964a3f4ead01b1cb6348b602042f6ac3af335cd4bb935a38ee",
+   "data/reference_answer.json": "5473818408d8a19960c4f820c1e5721d218b87b547499d7281c2a0fc4267b0c4"
+  }
+ },
+ "seed": "a1-lite-2026-10-11",
+ "n_tasks": 40,
+ "method": "40 over 15 sites: 2 per site, and the 10 left over go to the 10 sites that rank first by sha256(seed|'site|'+site); inside a site the tasks that rank first by sha256(seed|'task|'+id); run order = rank by sha256(seed|'order|'+id).",
+ "pool": 588,
+ "tasks": [
+  "Google Flights--39",
+  "Cambridge Dictionary--16",
+  "ArXiv--27",
+  "Coursera--31",
+  "ArXiv--16",
+  "Huggingface--31",
+  "ESPN--1",
+  "Amazon--15",
+  "GitHub--18",
+  "Wolfram Alpha--41",
+  "Huggingface--2",
+  "Wolfram Alpha--33",
+  "Huggingface--42",
+  "ArXiv--4",
+  "Google Search--37",
+  "Google Map--19",
+  "ESPN--12",
+  "GitHub--29",
+  "Allrecipes--32",
+  "Google Map--35",
+  "BBC News--19",
+  "Apple--36",
+  "Cambridge Dictionary--32",
+  "BBC News--41",
+  "Booking--19",
+  "Google Search--36",
+  "Booking--31",
+  "BBC News--32",
+  "Google Flights--14",
+  "Google Map--14",
+  "Wolfram Alpha--42",
+  "Coursera--6",
+  "ESPN--7",
+  "Amazon--26",
+  "Allrecipes--5",
+  "GitHub--24",
+  "Google Flights--19",
+  "Google Search--3",
+  "Amazon--29",
+  "Apple--10"
+ ],
+ "agent": {
+  "model": "haiku",
+  "max_turns": 25,
+  "wall_s": 300,
+  "prompt": "Start at {web} and answer this question using only what you read on the web: {ques}\nDo not log in, buy, post or submit anything. Finish with one last line: ANSWER: <your answer, short and exact>."
+ },
+ "judge": {
+  "model": "haiku",
+  "kinds": {
+   "golden": "a stable fact, true now",
+   "possible": "true on the day the task was written; the live page may differ now"
+  },
+  "prompt": "You grade one answer from a web agent. You judge the answer against the evidence below, never how the agent got there.\nTask: {ques}\nReference answer ({kind}): {reference}\nAgent's answer: {answer}\nPages the agent opened: {pages}\nPage text the agent read (passages of the pages; the last screenshots it saw are attached as images when there are any; empty means none):\n{page_text}\n\nRules:\n1. SUCCESS only if the answer does what the task asks and meets every condition the task states.\n2. A stable reference: the answer must give that fact; a different value is NOT_SUCCESS.\n3. A reference that may be out of date: the live page is the truth. The answer may differ from the reference, but every fact the answer states must appear in the page text or a screenshot above or agree with the reference; text the agent typed is not evidence, only what a page showed counts. When the pages the agent read support the answer and the reference disagrees, reply SUCCESS_STALE (the reference is out of date). When the pages do not support the answer, reply NOT_SUCCESS whatever the reference says; a value that appears nowhere is NOT_SUCCESS.\n4. An answer that only describes a page, gives a link, says it could not find or open the page, or asks the person to do a step is NOT_SUCCESS.\n5. A reference that starts with 'none:' is known to be wrong: judge by the task and the evidence alone.\nReply on one line: SUCCESS, SUCCESS_STALE or NOT_SUCCESS, a colon, then one short reason.",
+  "votes": 3,
+  "evidence": {
+   "tools": [
+    "read",
+    "view",
+    "goto",
+    "click",
+    "scroll",
+    "maps",
+    "wait",
+    "tabs"
+   ],
+   "chars": 30000,
+   "line_chars": 500,
+   "pages": 3,
+   "page_chars": 4000,
+   "screenshots": 4,
+   "why": "What the judge is shown. All the text of the worked calls that show a page when it fits in `chars`; else the lines (cut to `line_chars`, with the line before and after) that hold a number or a 4+-letter word of the answer, most distinct first, then the last `pages` read or view pages cut to `page_chars` as far as room is left. Before all of that, in full up to `chars`: the pages whose address or arXiv id the answer cites. `fill` and `script` are left out: their text is the agent's own input. Plus the last `screenshots` images, sent as image blocks."
+  },
+  "votes_why": "Three votes on the same prompt; a pass needs at least 2 SUCCESS, and a vote with no verdict is not a SUCCESS. The row keeps the votes and how many agree."
+ },
+ "caps": {
+  "agent_runs": 80,
+  "judge_runs": 160,
+  "why": "At most 40 tasks x 1 run, plus at most 3 reruns of a task whose attempt failed for a model or infra reason, capped at 80 agent runs in all (40 reruns); three judge votes per completed task (120), plus reruns of a vote that hit an API error or gave no verdict, capped at 160. Worst case 240 CLI runs and 80 x 25 = 2000 agent turns."
+ },
+ "redate": {
+  "rule": "Move every date in the question by the same whole number of years N, the smallest N for which the earliest date is at least 30 days after the run date (UTC); a re-dated task's reference becomes `possible`. `agent_rules.redate`; `summarize.check` re-applies it. The suite refuses to start when the dates it finds in the 40 questions are not these.",
+  "tasks": {
+   "Google Flights--39": [
+    "March 20, 2025"
+   ],
+   "Google Flights--14": [
+    "January 10, 2025",
+    "January 17, 2025"
+   ],
+   "Google Flights--19": [
+    "January 25, 2025"
+   ],
+   "Booking--19": [
+    "March 18, 2025",
+    "March 20, 2025"
+   ],
+   "Booking--31": [
+    "March 1-7, 2025"
+   ]
+  }
+ },
+ "references": {
+  "why": "A reference that contradicts a condition its own task states, found by reading all 40. For these the deterministic check is skipped and the judge is shown 'none: <reason>' in place of the reference. Placeholder references (`<model 1>`, `<summary>`) do not contradict their task and are not listed.",
+  "broken": {
+   "Allrecipes--5": "asks for >1000 reviews; the reference has 818"
+  }
+ },
+ "not_doable": {
+  "Allrecipes--32": "HTTP 402 IP block on every page, in both runs of 2026-10-11",
+  "Allrecipes--5": "HTTP 402 IP block on every page, in both runs of 2026-10-11"
+ },
+ "not_doable_why": "Fixed before the run: tasks no rule shows doable from the bench's address today. The summary prints the raw number, then the number without these, then the number without these and the bot-walled ones. Geo tasks (Amazon, Booking, Google Flights, Google Maps) are not listed: Sonnet passed Amazon--26 and Google Map--19, so no rule proves them dead."
+}
