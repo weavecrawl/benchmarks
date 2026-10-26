@@ -1,0 +1,446 @@
+{
+  "why": "The fixed input of every bench run: which cases, how many repeats, which pages. The bench has no randomness; the order is the file order. run.py records the sha256 of this file and of every case file it read in env.json.",
+  "reps": 10,
+  "whole_runs": [
+    [
+      "startup",
+      "tools",
+      "payload"
+    ],
+    [
+      "forms"
+    ],
+    [
+      "pages"
+    ],
+    [
+      "replay"
+    ],
+    [
+      "delegate"
+    ]
+  ],
+  "whole_runs_why": "A run is a result only when its suites are exactly one of these sets, at the reps of that set (`reps` for the first, the suite's own for the others). The three suites on the own site share a brain and are one run; each corpus suite reads public data with a brain of its own and is a run of its own.",
+  "startup": {
+    "reps": 5,
+    "why": "Brain start to /health, then the first goto (the browser starts cold). Each rep starts and stops its own scratch brain."
+  },
+  "tools": {
+    "why": "The field cases of every tool (tests/field/cases/<tool>.jsonl) against the own site, through the MCP, `reps` times.",
+    "skip_slow": true,
+    "skip_ids": {
+      "ws-words-edge": "reaches the real search engine: a third-party answer is not reproducible, and a burst of searches got the server's address throttled before (tests/bench/INVENTORY.md)"
+    }
+  },
+  "payload": {
+    "why": "What one look at a page costs an agent, in tokens, against the page's own HTML fetched plainly (the baseline). A look counts only when its answer, without its own url and title, carries the words in `must` (taken from tests/field/site/server.py): a broken tool that returns 5 tokens is not a saving. `covers` says what a look returns: the whole `page` (every part of a long answer is fetched and summed; only these get a token ratio), an `outline`, the `controls` of the page, or a navigation `receipt`. The /v/ pages are the big-page fixtures (tests/field/site/fixtures.py), added 2026-10-16 so the view/read budget has a measured before.",
+    "tokenizer": "cl100k_base",
+    "pages": [
+      {
+        "path": "/",
+        "must": {
+          "read_url": [
+            "Field test site"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Application form"
+          ],
+          "read_full": [
+            "A small local site"
+          ],
+          "view": [
+            "Click me"
+          ]
+        }
+      },
+      {
+        "path": "/about",
+        "must": {
+          "read_url": [
+            "Mentions the word zeppelin"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Mentions the word zeppelin"
+          ],
+          "read_full": [
+            "Mentions the word zeppelin"
+          ],
+          "view": [
+            "About"
+          ]
+        }
+      },
+      {
+        "path": "/list",
+        "must": {
+          "read_url": [
+            "Item 30"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Item 01"
+          ],
+          "read_full": [
+            "Item 30"
+          ],
+          "view": [
+            "Item 03"
+          ]
+        }
+      },
+      {
+        "path": "/form",
+        "must": {
+          "read_url": [
+            "Full name"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Full name"
+          ],
+          "read_full": [
+            "Submit application"
+          ],
+          "view": [
+            "Full name"
+          ]
+        }
+      },
+      {
+        "path": "/people",
+        "must": {
+          "read_url": [
+            "Hans Mueller"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Customer desk"
+          ],
+          "read_full": [
+            "Hans Mueller"
+          ],
+          "view": [
+            "Hans Mueller"
+          ]
+        }
+      },
+      {
+        "path": "/long",
+        "must": {
+          "read_url": [
+            "Paragraph 1.",
+            "THE END"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Long page"
+          ],
+          "read_full": [
+            "Paragraph 1.",
+            "THE END"
+          ],
+          "view": [
+            "Long page"
+          ]
+        }
+      },
+      {
+        "path": "/shadow",
+        "must": {
+          "read_url": [
+            "Shadow DOM"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Shadow button"
+          ],
+          "read_full": [
+            "Shadow button"
+          ],
+          "view": [
+            "Shadow button"
+          ]
+        }
+      },
+      {
+        "path": "/iframe",
+        "must": {
+          "read_url": [
+            "Form"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Inner button"
+          ],
+          "read_full": [
+            "Inner button"
+          ],
+          "view": [
+            "Inner button"
+          ]
+        }
+      },
+      {
+        "path": "/w/shadow-deep",
+        "must": {
+          "read_url": [
+            "Deep shadow DOM"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Deep button"
+          ],
+          "read_full": [
+            "Deep button"
+          ],
+          "view": [
+            "Deep button"
+          ]
+        }
+      },
+      {
+        "path": "/w/malformed",
+        "must": {
+          "read_url": [
+            "italic"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "unclosed"
+          ],
+          "read_full": [
+            "italic"
+          ],
+          "view": [
+            "italic"
+          ]
+        }
+      },
+      {
+        "path": "/v/editor",
+        "must": {
+          "read_url": [
+            "Layer editor"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Layer editor"
+          ],
+          "read_full": [
+            "Layer editor"
+          ],
+          "view": [
+            "Tool 1"
+          ]
+        }
+      },
+      {
+        "path": "/v/canvas",
+        "must": {
+          "read_url": [
+            "Drawing board"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Drawing board"
+          ],
+          "read_full": [
+            "Drawing board"
+          ],
+          "view": [
+            "T0"
+          ]
+        }
+      },
+      {
+        "path": "/v/article",
+        "must": {
+          "read_url": [
+            "Article with many links"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Article with many links"
+          ],
+          "read_full": [
+            "Article with many links"
+          ],
+          "view": [
+            "Topic 0"
+          ]
+        }
+      },
+      {
+        "path": "/v/results",
+        "must": {
+          "read_url": [
+            "Search results"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Search results"
+          ],
+          "read_full": [
+            "Search results"
+          ],
+          "view": [
+            "Filter 1"
+          ]
+        }
+      },
+      {
+        "path": "/v/form65",
+        "must": {
+          "read_url": [
+            "Form of 65 fields"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Form of 65 fields"
+          ],
+          "read_full": [
+            "Form of 65 fields"
+          ],
+          "view": [
+            "Field 1"
+          ]
+        }
+      },
+      {
+        "path": "/v/form200",
+        "must": {
+          "read_url": [
+            "Form of 200 fields"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Form of 200 fields"
+          ],
+          "read_full": [
+            "Form of 200 fields"
+          ],
+          "view": [
+            "Field 1"
+          ]
+        }
+      },
+      {
+        "path": "/v/modal",
+        "must": {
+          "read_url": [
+            "Catalogue"
+          ],
+          "goto": [
+            "\"loaded\":true"
+          ],
+          "read": [
+            "Catalogue"
+          ],
+          "read_full": [
+            "Catalogue"
+          ],
+          "view": [
+            "Background link 1"
+          ]
+        }
+      }
+    ],
+    "calls": [
+      {
+        "name": "read_url",
+        "tool": "read",
+        "covers": "page",
+        "args": {
+          "url": "{PAGE}",
+          "force": "static"
+        }
+      },
+      {
+        "name": "goto",
+        "tool": "goto",
+        "covers": "receipt",
+        "args": {
+          "url": "{PAGE}"
+        }
+      },
+      {
+        "name": "read",
+        "tool": "read",
+        "covers": "outline",
+        "args": {}
+      },
+      {
+        "name": "read_full",
+        "tool": "read",
+        "covers": "page",
+        "args": {
+          "level": "full"
+        }
+      },
+      {
+        "name": "view",
+        "tool": "view",
+        "covers": "controls",
+        "args": {}
+      }
+    ]
+  },
+  "forms": {
+    "why": "What the product says each field of Chromium's saved real-site forms is, against the field type Chrome's own autofill heuristics give it. Public data pinned by commit (corpora.json, corpora.lock.json); the only hand-made file is forms_vocabulary.json (which slot names mean the same as each Chrome type), reviewed before the first run. Three copies of every page are read: as saved, with a marker in every control (to learn which field is which control), and without the attributes in which the page says what a field is.",
+    "corpus": "chromium_autofill",
+    "reps": 1,
+    "reps_why": "the answer is a pure function of the page and the code: a repeat would read the same fields; the suite measures what the product says, not how fast"
+  },
+  "pages": {
+    "why": "How well the product reads saved real article pages, scored by the public scorer of Scrapinghub's article-extraction-benchmark (evaluate.py, fetched with the data at a pinned commit and checked against the lock). The product's looks (`read(url)`; `goto` then `read(level=full)`, every part; the cheap looks `read` outline and `view` for their cost) are scored against the true article body of each page; the stubs (the page's text without markup, the title alone) are scored by the same function; five published outputs of other extractors are scored again and must come out as the repository's README table says.",
+    "corpus": "article_extraction",
+    "reps": 1,
+    "reps_why": "The content scores (F1, precision, recall) and the token counts are a pure function of the page and the code: a repeat gives the same words (the summary says on how many pages `read(url)` gave the same words on its 3 repeats). The browser looks (goto, read outline, read full, view) each cost a near-constant 1.6 to 1.7 s of page settle on a page that runs script, so they are taken once per page; p50/p95 are over the 181 pages. `read(url)` is a plain fetch (about 50 ms) and is taken 3 times.",
+    "url_reps": 3,
+    "url_reps_why": "read(url) is cheap, so it is repeated: it shows whether the same words come back each time."
+  },
+  "replay": {
+    "why": "What walking a saved path costs and what the product's stored route is worth through its tools, on routes fixed in replay_routes.json (the own loopback site and two public sandbox sites built for scraping). Each hop is timed and its arrival is checked by an independent read of the page; at 1, 5, 20 (and 100 on the own site) walks the stored route is asked for and the address of the last page is loaded. See suite_replay.py for what is and is not measured.",
+    "reps": 1,
+    "reps_why": "the walk repeats itself (k walks of each route are the measurement: the first against the later ones); nothing is repeated beside that"
+  },
+  "delegate": {
+    "why": "Whether one delegate_task call reaches a simple multi-step goal on a public practice site, and says ok only when it did: 11 goals fixed in delegate_goals.json before any change to delegate_task, each in a fresh session, each verified by an independent read of the page. See suite_delegate.py for what is and is not measured.",
+    "reps": 1,
+    "reps_why": "delegate_goals.json holds the suite's own repeats (each goal 3 times); nothing is repeated beside that"
+  }
+}
