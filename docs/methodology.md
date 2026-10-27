@@ -35,7 +35,7 @@ WebVoyager was written in 2024 and its tasks and answers age. These are all the 
 8. **Broken sites counted apart.** If a task's own site answers with a server error or an error page, is unreachable, or never finishes loading, and no answer passed, it is a *site fault*. It counts as a miss in the raw score and is left out of the headline score. (No task was marked this way in any published run.)
 9. **Held for a person, by design.** On a person's own device, if the product stops to ask a person (a submit, a purchase, an add to cart, a login), the task is *held*. The test never forces it. It counts as a miss in the raw score and is left out of the headline score. One task (Amazon--15) is held in every run on a person's device.
 10. **Two tasks fixed as not doable.** Before the first run, two Allrecipes tasks (Allrecipes--32 and Allrecipes--5) showed an IP block on every page from our server's address (HTTP 402). They are named in the reports. A not-doable task that passed anyway stays in the score; one that did not pass is left out of the headline score.
-11. **One run per setup.** No averaging over repeats.
+11. **Mostly one run per setup.** No averaging over repeats. The exception: on 2026-10-27 the same release ran twice (runs 2 and 3 in the desktop app) and the two runs scored 95.0% and 87.5% raw, so a single run can vary by several points.
 
 ## Scores
 
@@ -48,7 +48,7 @@ Every report prints these three, and each task left out is named with its reason
 Ranges are 95% intervals; with 40 tasks they are wide (roughly ±12 points).
 
 ## Limits
-Live sites change; the judge is an AI (it reads text and screenshots, not a human); the judge and the agent differ from the original WebVoyager; the summaries cut long judge reasons short; each setup was run once. Treat a score as a solid snapshot, not an exact constant. Runs on a person's own device are not directly comparable with the server-browser runs (a real browser with its own sign-ins).
+Live sites change; the judge is an AI (it reads text and screenshots, not a human); the judge and the agent differ from the original WebVoyager; the summaries cut long judge reasons short; each setup was run once (one release was run twice, and the two runs differ by about 7 points). Treat a score as a solid snapshot, not an exact constant. Runs on a person's own device are not directly comparable with the server-browser runs (a real browser with its own sign-ins).
 
 ## How to run it yourself
 See [harness/README.md](../harness/README.md): what you need (a running WeaveCrawl, the `claude` agent and a token, Python with `mcp`, `playwright`, `tiktoken`) and the exact command. Timing: about 25 to 35 minutes for 40 tasks, on a machine that is not busy.
