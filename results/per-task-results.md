@@ -9,7 +9,149 @@ The "why" column is the judge's reason as the report prints it. The report cuts 
 
 Tasks left out of the headline score are marked **left out** with the reason.
 
-## 2026-10-26 (latest), desktop app, Sonnet
+## 2026-10-27, run 3 (latest), desktop app, Sonnet
+
+Report: [webvoyager-sonnet-desktop-3-summary.md](../results/2026-10-27/webvoyager-sonnet-desktop-3-summary.md)
+
+| Task | Result | Steps | Time (s) | Left out of headline? | Why (judge's reason) |
+| :-- | :-- | --: | --: | :-- | :-- |
+| Google Flights--39 | Passed | 8 | 34 | - | The answer names Tokyo as the cheaper city, matching the reference. Its prices (Tokyo from €564, Sapporo from… |
+| Cambridge Dictionary--16 | Passed | 6 | 26 | - | The definition, both pronunciations, and both example sentences match the Cambridge page text the agent read,… |
+| ArXiv--27 | Passed | 10 | 29 | - | The agent's answer lists Econometrics (econ.EM), General Economics (econ.GN), and Theoretical Economics (econ.… |
+| Coursera--31 | Passed | 4 | 26 | - | The page shows 5 stars at 61.33%, which rounds to the agent's 61%, and the reference's 52.6% appears to be out… |
+| ArXiv--16 | Passed | 4 | 18 | - | the live new-submissions page supports every figure in the answer (7.9 vs 9.9 mHz, ~18% smaller amplitude, LIS… |
+| Huggingface--31 | Passed | 6 | 30 | - | the search page sorted by recently updated lists wendellperbar/serigy-fake-news-br first, "Updated about 15 ho… |
+| ESPN--1 | Passed | 11 | 154 | - | The answer's claims are supported by the pages read. The buzz page's newest items run to Oct. 26 with no compl… |
+| Amazon--15 | Held for a person | 8 | 88 | left out: held for a person | the product held an act for the person (needs_human) and no passing answer; the bench never does it; judge: Th… |
+| GitHub--18 | Passed | 5 | 19 | - | the reference 'OpenCV' is in the answer |
+| Wolfram Alpha--41 | Passed | 8 | 31 | - | the reference '110 bpm' is in the answer |
+| Huggingface--2 | Passed | 4 | 20 | - | all three models (IndexTeam/Index-Translate-2B, CohereLabs/North-Small-Translate-1.0, pfnet/plamo-2-translate)… |
+| Wolfram Alpha--33 | Passed | 7 | 29 | - | The second page the agent read shows "Itaipu Dam / annual power generation 89.5 TW h (terawatt hours)", which… |
+| Huggingface--42 | Passed | 4 | 31 | - | The viewer page shows complex_qa_0's first user message with the same content as the answer, and the reference… |
+| ArXiv--4 | Passed | 4 | 19 | - | The page the agent read shows "New submissions (showing 30 of 30 entries)", which supports 30. The reference v… |
+| Google Search--37 | Passed | 6 | 29 | - | The search page's AI overview supports the agent's three planets and their facts (Proxima Centauri b at 4.24 l… |
+| Google Map--19 | Passed | 10 | 54 | - | The directions page for Hilton Garden Inn to Giant Eagle Supermarket (walking mode, `!3e2`) shows "34 min" wit… |
+| ESPN--12 | Passed | 4 | 24 | - | The page text lists the first three Top Headlines as the Kane/Yamal/Mbappé Ballon d'Or item (soccer), "Putella… |
+| GitHub--29 | Passed | 5 | 18 | - | the reference 'Unlimited' is in the answer |
+| Allrecipes--32 | Passed | 20 | 52 | - | The live page shows "Slow Cooker Beef Stew I" with 4,045 reviews (reference says 3,994), 8 hours on Low or 4 o… |
+| Google Map--35 | Failed | 5 | 12 | - | The stated facts (4.8 rating, 6,334 reviews, 3,242 km², 24-hour hours, nps.gov, Texas) all appear on the page,… |
+| BBC News--19 | Passed | 6 | 14 | - | The page shows Sunday 1 November 2026 (New York City Marathon) as the next listed event after the 11 October C… |
+| Apple--36 | Passed | 8 | 20 | - | The page text shows Olivia Rodrigo (album cover art and video) and Sienna Spiro (singing into a microphone) in… |
+| Cambridge Dictionary--32 | Passed | 5 | 13 | - | The agent's answer states that "fewer" goes with plural countable nouns (example "fewer cars and fewer acciden… |
+| BBC News--41 | Passed | 6 | 31 | - | The live Women's Open page shows a three-way tie at 4 top-20 players (Japan, United States, South Korea, count… |
+| Booking--19 | Passed | 4 | 17 | - | The page text shows all three hotels rated above 8.0 for the requested dates (Hôtel des Arts Montmartre 9.6, V… |
+| Google Search--36 | Passed | 6 | 19 | - | The pages show the 2026 Physics laureate won for decisive contributions to the IceCube Neutrino Observatory, a… |
+| Booking--31 | Passed | 9 | 32 | - | The page lists 20 brands with Windsor at 15 (most) and Days Inn by Wyndham at 1 (fewest), so the answer is sup… |
+| BBC News--32 | Passed | 7 | 21 | - | The AI section page (bbc.com/technology/artificial-intelligence) lists "Anthropic's blockbuster share listing… |
+| Google Flights--14 | Passed | 6 | 16 | - | The page's Cheapest tab shows €531, and the TAP Air Portugal 1-stop option via LIS is listed at 531 euros roun… |
+| Google Map--14 | Failed | 4 | 24 | - | The page lists NYC Parking at CBS Building first, but nothing on it says any listing offers motorcycle parking… |
+| Wolfram Alpha--42 | Failed | 11 | 33 | - | The pages the agent read show only "Interpreting as: 123.5" with empty result fields. No memory value (192.5 M… |
+| Coursera--6 | Passed | 15 | 237 | - | The pages the agent read support its answer. The Foundations of AI in Healthcare course page lists "13 assignm… |
+| ESPN--7 | Passed | 8 | 79 | - | The schedule page shows Sun, Oct 25 vs Utah at 132-123 with a 3-0 record and Doncic 52 high points, and the ga… |
+| Amazon--26 | Passed | 4 | 13 | - | the search page shows the Anker soundcore 2 with IPX7 and 24-hour playtime at EUR 30.37, which supports the an… |
+| Allrecipes--5 | Passed | 13 | 67 | - | The agent's pick, World's Best Pasta Sauce!, shows 4.8 stars and 1,108 ratings on the page, and the listed ing… |
+| GitHub--24 | Failed | 5 | 24 | - | the page shows issues closed on Oct 27 and Oct 26 (for example #9b8b987f, #28dd993b, #71216) that are more rec… |
+| Google Flights--19 | Passed | 5 | 12 | - | The live page lists easyJet LGW–CDG at 7:00 AM–9:20 AM, 1 hr 20 min, nonstop, €39 as the cheapest result, whic… |
+| Google Search--3 | Passed | 7 | 71 | - | The IMDb list the agent opened shows Modern Times at #4 and City Lights at #5, which matches the agent's answe… |
+| Amazon--29 | Passed | 5 | 21 | - | The DenicMic 10-pack listing shows LED, solar, a 10-pack and 18.49 EUR on the page the agent read, which satis… |
+| Apple--10 | Passed | 6 | 45 | - | The pages show the MacBook Pro with M5, M5 Pro and M5 Max chips, and the stated core counts, memory (16GB to 1… |
+
+## 2026-10-27, run 2, desktop app, Sonnet
+
+Report: [webvoyager-sonnet-desktop-2-summary.md](../results/2026-10-27/webvoyager-sonnet-desktop-2-summary.md)
+
+| Task | Result | Steps | Time (s) | Left out of headline? | Why (judge's reason) |
+| :-- | :-- | --: | --: | :-- | :-- |
+| Google Flights--39 | Passed | 6 | 26 | - | Both pages support the answer. Tokyo's cheapest fare is €564 and Sapporo's is €1,837, so Tokyo is cheaper. The… |
+| Cambridge Dictionary--16 | Passed | 7 | 22 | - | The page text shows the definition, the UK and US pronunciations (matching the reference), the noun [C] label,… |
+| ArXiv--27 | Passed | 11 | 24 | - | The answer lists all three Economics categories with the correct abbreviations (econ.EM, econ.GN, econ.TH), ma… |
+| Coursera--31 | Passed | 4 | 26 | - | The live page shows 5 stars at 61.33%, which rounds to 61%, matching the agent's answer. The reference of 52.6… |
+| ArXiv--16 | Passed | 4 | 12 | - | The answer names a paper and summarizes its abstract, and the page text the agent read under the gr-qc new-sub… |
+| Huggingface--31 | Passed | 5 | 18 | - | The search page sorted by recently updated lists wendellperbar/serigy-fake-news-br as "Text Classification • U… |
+| ESPN--1 | Passed | 14 | 168 | - | The ESPN buzz page (dated Oct 26) and the trade tracker (latest entry Sep 22) show no trade in the past 2 days… |
+| Amazon--15 | Held for a person | 18 | 258 | left out: held for a person | the product held an act for the person (awaiting_approval) and no passing answer; the bench never does it; jud… |
+| GitHub--18 | Passed | 5 | 16 | - | the reference 'OpenCV' is in the answer |
+| Wolfram Alpha--41 | Passed | 8 | 25 | - | the reference '110 bpm' is in the answer |
+| Huggingface--2 | Passed | 6 | 28 | - | All three models (IndexTeam/Index-Translate-2B, CohereLabs/North-Small-Translate-1.0, pfnet/plamo-2-translate)… |
+| Wolfram Alpha--33 | Passed | 7 | 24 | - | The second Wolfram Alpha page the agent read shows "Itaipu Dam / annual power generation = 89.5 TW h (terawatt… |
+| Huggingface--42 | Passed | 5 | 21 | - | The page text for complex_qa_0 shows the first user message as "Please provide a reasonable subgoal-based plan… |
+| ArXiv--4 | Passed | 5 | 16 | - | The page shows "New submissions (showing 18 of 18 entries)" for Monday, 26 October 2026, which supports the an… |
+| Google Search--37 | Passed | 7 | 24 | - | The AI overview on the opened results page names Proxima Centauri b, Gliese 667 Cc and Kepler-442b and gives e… |
+| Google Map--19 | Passed | 11 | 65 | - | The live pages show Hilton Garden Inn Pittsburgh Airport as the top Hilton result, and a walking route of 35 m… |
+| ESPN--12 | Passed | 4 | 27 | - | The page text lists the first three Top Headlines as the Ballon d'Or men's award (Kane, Yamal, Mbappé), Putell… |
+| GitHub--29 | Passed | 4 | 14 | - | the reference 'Unlimited' is in the answer |
+| Allrecipes--32 | Passed | 11 | 72 | - | The page shows 4.5 stars, 4,045 reviews, directions of 8–12 hours on Low or 4–6 on High, and the first five in… |
+| Google Map--35 | Passed | 6 | 17 | - | every fact in the answer (4.8 rating, 6,334 reviews, 3,242 km², open 24 hours, nps.gov) appears in the page te… |
+| BBC News--19 | Passed | 7 | 17 | - | The reference (17-18 February 2024) is out of date. The calendar pages the agent read show Sunday 1 November 2… |
+| Apple--36 | Passed | 16 | 63 | - | The page text shows "Live at Apple Music Radio Die On This Hill by SIENNA SPIRO" as a picture caption, which s… |
+| Cambridge Dictionary--32 | Passed | 5 | 20 | - | The page text supports every fact in the answer: "less" with uncountable nouns, "fewer" with plural nouns, the… |
+| BBC News--41 | Passed | 18 | 77 | - | The Women's Open leaderboard the agent read shows Japan, the United States and South Korea tied at 4 players e… |
+| Booking--19 | Passed | 6 | 54 | - | All three hotels and their scores/review counts (9.6/2,451, 9.6/698, 9.5/1,283) appear on the pages the agent… |
+| Google Search--36 | Passed | 5 | 19 | - | The live pages (2026 Nobel Prize in Physics for IceCube and astrophysical neutrinos, naming Halzen at Wisconsi… |
+| Booking--31 | Passed | 8 | 22 | - | The page text lists Windsor with 15 properties (the most) and Days Inn by Wyndham with 1 (the fewest, the only… |
+| BBC News--32 | Passed | 8 | 37 | - | The live page at bbc.com/technology/artificial-intelligence shows the top headline "Anthropic's blockbuster sh… |
+| Google Flights--14 | Passed | 6 | 19 | - | The page's Cheapest tab shows €531, and the TAP Air Portugal 1-stop Newark–Gatwick listing at 531 euros round… |
+| Google Map--14 | Failed | 6 | 24 | - | the pages list NYC Parking at CBS Building as a parking garage near Radio City, but nothing shows it offers mo… |
+| Wolfram Alpha--42 | Passed | 18 | 51 | - | the reference '192 MB' is in the answer |
+| Coursera--6 | Passed | 12 | 149 | - | The AI for Healthcare page the agent read shows "1 week to complete at 10 hours a week" and "Assessments: 8 as… |
+| ESPN--7 | Passed | 6 | 46 | - | The ESPN page shows the Lakers beat the Utah Jazz 132-123 on Sunday, with 52 points and eight 3-pointers, and… |
+| Amazon--26 | Passed | 4 | 20 | - | The Anker soundcore 2 listing on the page shows IPX7, 24-Hour Playtime, and a price of 30.37 (labeled EUR, not… |
+| Allrecipes--5 | Passed | 13 | 62 | - | The page shows World's Best Pasta Sauce! at 4.8 stars with 1,108 ratings, and the ingredient list matches the… |
+| GitHub--24 | Passed | 6 | 21 | - | The three Oct 26 closures in the page text match the answer's titles, matched by author: #71216 (BlueIridium,… |
+| Google Flights--19 | Passed | 6 | 17 | - | the live page lists easyJet LGW 7:00 AM → CDG 9:20 AM at €39, nonstop, 1 hr 20 min, and the "Cheapest from €39… |
+| Google Search--3 | Passed | 6 | 26 | - | The IMDb page the agent read (Comedy, 25,000+ votes, sorted by user rating descending) lists The Chaos Class,… |
+| Amazon--29 | Passed | 4 | 18 | - | The page shows the DenicMic 10 Pack solar LED pathway lights at 18.49 EUR, which is under $50 and meets the pa… |
+| Apple--10 | Passed | 12 | 61 | - | The reference's M3 chips and memory and storage ranges are out of date. The pages the agent read show M5, M5 P… |
+
+## 2026-10-27, run 1, desktop app, Sonnet
+
+Report: [webvoyager-sonnet-desktop-1-summary.md](../results/2026-10-27/webvoyager-sonnet-desktop-1-summary.md)
+
+| Task | Result | Steps | Time (s) | Left out of headline? | Why (judge's reason) |
+| :-- | :-- | --: | --: | :-- | :-- |
+| Google Flights--39 | Passed | 7 | 30 | - | The answer names Tokyo as cheaper, matching the reference. The pages show Tokyo "Cheapest from €564" and a Sap… |
+| Cambridge Dictionary--16 | Failed | 7 | 18 | - | The answer omits the pronunciation the task requires; it says the IPA could not be read, and the page shows on… |
+| ArXiv--27 | Passed | 9 | 22 | - | The arXiv economics page (https://arxiv.org/archive/econ) lists econ.EM - Econometrics, econ.GN - General Econ… |
+| Coursera--31 | Passed | 4 | 25 | - | the opened Coursera page shows 5 stars at 61.33%, which rounds to 61%, so the reference 52.6% is out of date.… |
+| ArXiv--16 | Passed | 4 | 14 | - | The answer names a paper listed in the page's New submissions section, "The fate of primordial gravitational w… |
+| Huggingface--31 | Failed | 10 | 45 | - | The listing's top "Updated about 8 hours ago" entry is `wendellperbar/serigy-candle-river-45-news-br`, not the… |
+| ESPN--1 | Passed | 10 | 94 | - | The buzz page dated Oct 26, 2026 shows no completed NBA trade in the past two days, only waivers and extension… |
+| Amazon--15 | Held for a person | 16 | 216 | left out: held for a person | the product held an act for the person (awaiting_approval) and no passing answer; the bench never does it; jud… |
+| GitHub--18 | Passed | 5 | 42 | - | the reference 'OpenCV' is in the answer |
+| Wolfram Alpha--41 | Passed | 16 | 28 | - | the reference '110 bpm' is in the answer |
+| Huggingface--2 | Passed | 4 | 15 | - | All three named models appear on the page as translation models updated within the past month (16, 16, and 26… |
+| Wolfram Alpha--33 | Passed | 7 | 17 | - | The answer "89.5 TWh" matches the reference and appears in the opened page text ("89.5 TW h (terawatt hours)"… |
+| Huggingface--42 | Passed | 6 | 20 | - | The page text shows `complex_qa_0`'s first user message as "Please provide a reasonable subgoal-based plan to… |
+| ArXiv--4 | Passed | 4 | 16 | - | the page shows "New submissions (showing 18 of 18 entries)" for astro-ph.GA, which supports the answer 18, and… |
+| Google Search--37 | Passed | 7 | 29 | - | every fact in the answer (masses, distances, host types) appears in the Google results text, and the page's AI… |
+| Google Map--19 | Passed | 11 | 73 | - | Hilton Garden Inn Pittsburgh Airport matches the reference, and the directions page shows "34 min" to Giant Ea… |
+| ESPN--12 | Passed | 4 | 27 | - | The page text lists the first three Top Headlines as Kane/Yamal/Mbappé (soccer), Putellas' women's Ballon d'Or… |
+| GitHub--29 | Passed | 5 | 12 | - | the reference 'Unlimited' is in the answer |
+| Allrecipes--32 | Passed | 20 | 52 | - | the live page shows a slow-cooker recipe with 4.5 stars, 4,045 reviews, Cook Time 4 hrs, and the same first fi… |
+| Google Map--35 | Passed | 4 | 13 | - | Every fact the answer states (4.8 rating, 6,334 reviews, 3,242 km², open 24 hours, nps.gov) appears in the pag… |
+| BBC News--19 | Passed | 7 | 19 | - | The live calendar shows Sunday 1 November 2026 (New York City Marathon), which is the next event after today (… |
+| Apple--36 | Passed | 10 | 24 | - | The page text names Sienna Spiro in the picture captions ("Sienna Spiro singing into a microphone"), but it na… |
+| Cambridge Dictionary--32 | Passed | 5 | 17 | - | The answer states the page's rule (less with uncountable nouns, fewer with plural nouns), and its examples and… |
+| BBC News--41 | Failed | 6 | 36 | - | The answer omits South Korea, which also has 4 players in the top 20 on the Women's Open page (Hae-Ran Ryu, Ji… |
+| Booking--19 | Passed | 4 | 15 | - | All three hotels and their scores (9.6, 9.5, 9.6) appear on the page, all are above 8.0 with the dates applied… |
+| Google Search--36 | Passed | 9 | 66 | - | the live page shows a 2026 sole laureate for IceCube and the South Pole neutrino work, so the 2023 reference i… |
+| Booking--31 | Passed | 8 | 18 | - | The page's Brands list shows Windsor with 15 properties (most) and Days Inn by Wyndham with 1 (fewest, the onl… |
+| BBC News--32 | Passed | 9 | 30 | - | The BBC Technology "Artificial Intelligence" page lists "Anthropic's blockbuster share listing - 5 surprising… |
+| Google Flights--14 | Passed | 6 | 21 | - | The page shows "Cheapest from €530" and the TAP Air Portugal 1-stop option at 530 euros round trip, so the ans… |
+| Google Map--14 | Failed | 5 | 28 | - | The task asks for motorcycle parking, but the answer names a general 24-hour garage that the agent itself says… |
+| Wolfram Alpha--42 | Failed | 21 | 62 | - | none of the pages the agent read shows the 192.45 million-byte figure or any raw-memory result. The one loaded… |
+| Coursera--6 | Passed | 11 | 124 | - | The page shows the course, "8 hours to complete," and "Assessments: 4 assignments," so the answer is supported… |
+| ESPN--7 | Passed | 7 | 48 | - | The page text supports the score (Lakers 132, Utah Jazz 123, Sunday), the season-high 52 points with eight 3-p… |
+| Amazon--26 | Passed | 4 | 15 | - | the answer's product (Anker soundcore 2, IPX7, 24-hour playtime, 30.37) appears on the opened search page and… |
+| Allrecipes--5 | Passed | 17 | 83 | - | The recipe shows 4.6 stars, 3,755 ratings and "Reviews (2,755)", meeting both thresholds. The ingredient list… |
+| GitHub--24 | Passed | 5 | 18 | - | The page shows the `is:closed` filter, and the three answers are the top three entries in that list, in the or… |
+| Google Flights--19 | Passed | 5 | 20 | - | The page supports the answer: easyJet at €39, nonstop, 1 hr 20 min, 7:00 AM LGW→CDG, with "Cheapest from €39"… |
+| Google Search--3 | Passed | 6 | 38 | - | The IMDb page the agent opened, sorted by user rating with the comedy and 25,000-vote filters, lists The Chaos… |
+| Amazon--29 | Passed | 5 | 20 | - | The DenicMic 10 Pack Pathway Lights are solar, LED, sold in a 10-pack, and listed at 18.49 on the search page,… |
+| Apple--10 | Passed | 10 | 69 | - | The live pages show the MacBook Neo at $699/$799 with Apple A18 Pro (6-core CPU, 5-core GPU), 8GB unified memo… |
+
+
+## 2026-10-26 (later), desktop app, Sonnet
 
 Report: [webvoyager-sonnet-desktop-2-summary.md](../results/2026-10-26/webvoyager-sonnet-desktop-2-summary.md)
 
